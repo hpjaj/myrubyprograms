@@ -17,7 +17,6 @@ a = 'hello '
 a<<'world.
 I love this world...'
 puts a
-
 =begin
   << marks the start of the string literal and 
   is followed by a delimiter of your choice. 
