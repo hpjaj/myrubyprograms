@@ -12,7 +12,6 @@ ages_in_seconds = [
   1025600095,
 ]
 
-
 ages_in_seconds.each do |seconds|
   convert_seconds_to_years_and_months(seconds)     # 68 years and 5 months
 end
