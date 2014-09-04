@@ -3,6 +3,9 @@
 # display converted value
 # display start prompt
 
+@absolute_zero_in_celsius = -273.15
+@absolute_zero_in_fahrenheit = -459.67
+
 def quit
   puts
   puts "You have elected to quit. Peace."
@@ -43,12 +46,12 @@ def get_fahrenheit_value_to_convert
   if @fahrenheit_choice == 0
     puts "I did not understand that."
     get_fahrenheit_value_to_convert
-  elsif @fahrenheit_choice > -459.67 && @fahrenheit_choice < 0
+  elsif @fahrenheit_choice > @absolute_zero_in_fahrenheit && @fahrenheit_choice < 0
     convert_fahrenheit_to_celsius
   elsif @fahrenheit_choice > 0
     convert_fahrenheit_to_celsius
   else
-    puts "Value must be greater than absolute zero, which is -459.67 degrees Fahrenheit."
+    puts "Value must be greater than absolute zero, which is #{@absolute_zero_in_fahrenheit} degrees Fahrenheit."
     get_fahrenheit_value_to_convert
   end
 end
@@ -61,12 +64,12 @@ def get_celsius_value_to_convert
   if @celsius_choice == 0
     puts "I did not understand that."
     get_celsius_value_to_convert
-  elsif @celsius_choice > -273.15 && @celsius_choice < 0
+  elsif @celsius_choice > @absolute_zero_in_celsius && @celsius_choice < 0
     convert_celsius_to_fahrenheit
   elsif @celsius_choice > 0
     convert_celsius_to_fahrenheit
   else
-    puts "Value must be greater than absolute zero, which is -273.15 degrees Celsius."
+    puts "Value must be greater than absolute zero, which is #{@absolute_zero_in_celsius} degrees Celsius."
     get_celsius_value_to_convert
   end
 end
