@@ -72,17 +72,23 @@ def get_celsius_value_to_convert
 end
 
 def convert_fahrenheit_to_celsius
-  temperature_in_celsius = (@fahrenheit_choice - 32) * 5 / 9
-  rounded_to_decimal = (temperature_in_celsius * 100).round / 100.0
-  puts "#{@fahrenheit_choice} degrees Fahrenheit is #{rounded_to_decimal} degrees Celsius."
+  @converted_temperature = (@fahrenheit_choice - 32) * 5 / 9
+  make_precise_to_two_decimal_places
+end
+
+def make_precise_to_two_decimal_places
+  @new_precise_temperature = format("%.2f", @converted_temperature)
+  print_converted_temperature
+end
+
+def print_converted_temperature
+  puts "Converted temperature:  #{@new_precise_temperature}"
   reset_program
 end
 
 def convert_celsius_to_fahrenheit
-  temperature_in_fahrenheit = ((@celsius_choice * 9) / 5) + 32
-  rounded_to_decimal = (temperature_in_fahrenheit * 100).round / 100.0
-  puts "#{@celsius_choice} degrees Celsius is #{rounded_to_decimal} degrees Fahrenheit."
-  reset_program
+  @converted_temperature  = ((@celsius_choice * 9) / 5) + 32
+  make_precise_to_two_decimal_places
 end
 
 def reset_program
