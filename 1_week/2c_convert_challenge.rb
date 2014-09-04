@@ -20,15 +20,15 @@ def start_prompt
   puts "If you would like to convert Celsius to Fahrenheit, type: c to f"
   puts "Type QUIT to exit the program."
   print "> "
-  @conversion_choice = gets.chomp.downcase 
-  
+  @conversion_choice = gets.chomp.downcase
+
   if @conversion_choice == 'f to c'
     get_fahrenheit_value_to_convert
   elsif @conversion_choice == 'c to f'
     get_celsius_value_to_convert
   elsif @conversion_choice == 'quit'
     quit
-  else 
+  else
     puts
     puts "I did not understand that."
     start_prompt
@@ -46,7 +46,7 @@ def get_fahrenheit_value_to_convert
   elsif @fahrenheit_choice > -459.67 && @fahrenheit_choice < 0
     convert_fahrenheit_to_celsius
   elsif @fahrenheit_choice > 0
-    convert_fahrenheit_to_celsius  
+    convert_fahrenheit_to_celsius
   else
     puts "Value must be greater than absolute zero, which is -459.67 degrees Fahrenheit."
     get_fahrenheit_value_to_convert
@@ -57,14 +57,14 @@ def get_celsius_value_to_convert
   puts "What value do you want to have converted into Fahrenheit?  Enter numbers only."
   print "> "
   @celsius_choice = gets.chomp.to_f
-  
+
   if @celsius_choice == 0
     puts "I did not understand that."
-    get_celsius_value_to_convert  
+    get_celsius_value_to_convert
   elsif @celsius_choice > -273.15 && @celsius_choice < 0
     convert_celsius_to_fahrenheit
   elsif @celsius_choice > 0
-    convert_celsius_to_fahrenheit  
+    convert_celsius_to_fahrenheit
   else
     puts "Value must be greater than absolute zero, which is -273.15 degrees Celsius."
     get_celsius_value_to_convert
@@ -79,7 +79,7 @@ def convert_fahrenheit_to_celsius
 end
 
 def convert_celsius_to_fahrenheit
-  temperature_in_fahrenheit = ((@celsius_choice * 9) / 5) + 32 
+  temperature_in_fahrenheit = ((@celsius_choice * 9) / 5) + 32
   rounded_to_decimal = (temperature_in_fahrenheit * 100).round / 100.0
   puts "#{@celsius_choice} degrees Celsius is #{rounded_to_decimal} degrees Fahrenheit."
   reset_program
