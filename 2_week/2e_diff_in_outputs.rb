@@ -1,17 +1,13 @@
 def mtdarry
   2.times do |num|
+    puts "Before number #{num}"
     puts num
+    puts "After number #{num}"
   end
 end
- 
+
 mtdarry
 
-puts "************"
+puts; puts "*" * 20; puts
 
-def mtdarry
-  2.times do |num|
-    puts num
-  end
-end
- 
 puts mtdarry
