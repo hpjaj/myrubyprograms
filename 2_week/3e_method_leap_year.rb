@@ -1,7 +1,10 @@
+days_in_a_leap_year = 365.25
+days_in_a_non_leap_year = 365
+
 puts "Enter a year and I will tell you TRUE or FALSE, if that year is or is not a leap year."
 print "> "
 
-@year_choice = gets.chomp.to_i
+@year_choice = gets.to_i
   
 leap_year_calculator = case  
        when @year_choice % 400 == 0 then true  
@@ -16,7 +19,7 @@ def calculate_minutes_in_a_year_with_this_many_days(days_in_this_year)
   @number_of_minutes = days_in_this_year * 24 * 60
 end
 
-leap_year_calculator ? calculate_minutes_in_a_year_with_this_many_days(365.25) : calculate_minutes_in_a_year_with_this_many_days(365)
+leap_year_calculator ? calculate_minutes_in_a_year_with_this_many_days(days_in_a_leap_year) : calculate_minutes_in_a_year_with_this_many_days(days_in_a_non_leap_year)
 
 
 
