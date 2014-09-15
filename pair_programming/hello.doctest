@@ -2,8 +2,8 @@
 
 ## Doctest Overview
 
-We need to load the file, as in this case we are not storing the tests in the
-same file as the program.
+We need to load the file that we want to test. as in this case we are not
+storing the tests in the same file as the program.
 
     doctest: load file
     >> load './hello.rb'
@@ -42,7 +42,7 @@ As we continue on with the next two tests, we see a pattern emerge.
     => "Hello Harry!"
     doctest: I can ask if someone is there
     >> hello('Vic', '?')
-    => "Hello Vic?"
+    => "Hello, Vic?"
 
 And we will finally want to see the final result:
 
@@ -58,3 +58,6 @@ One thing that you may notice while looking at this document is "Why don't we
 have an expectation with that very first test?"   The answer is, if it ifails
 to load, all tests should fail.  We will notice the problem.  But go ahead and
 run it and see, it is the best way to learn.
+
+
+
