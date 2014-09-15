@@ -58,6 +58,3 @@ One thing that you may notice while looking at this document is "Why don't we
 have an expectation with that very first test?"   The answer is, if it ifails
 to load, all tests should fail.  We will notice the problem.  But go ahead and
 run it and see, it is the best way to learn.
-
-
-
