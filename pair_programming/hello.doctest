@@ -1,0 +1,60 @@
+# Hello Pair Programming Exercise
+
+## Doctest Overview
+
+We need to load the file, as in this case we are not storing the tests in the
+same file as the program.
+
+    doctest: load file
+    >> load './hello.rb'
+
+This file demonstrates that the RubyDoctest gem will read whatever file we
+have, and treat the markings that look like an IRB simple prompt as its test
+'framework'.
+
+The first test we will write is one that indicates the idea of greeting the
+world.
+
+    doctest: I can greet the world
+    >> hello
+    => "Hello World!"
+
+It has the structure of having a "doctest:" directive, which sets the title for
+our test.  In this case, the title is "I can greet the world"
+
+The two greater-than signs then indicate the code we want to execute.  In this
+case, it is the 'hello' bareword.
+
+The equal-greater-than sign indicates what is expected.  If this doesn't match,
+you will get a 'Fail' indication.
+
+So far, the test looks like this, when it runs:
+
+    === Testing 'hello.doctest'...
+    1.   OK  | load file
+    2.   OK  | I can greet the world
+    2 comparisons, 2 doctests, 0 failures, 0 errors
+
+As we continue on with the next two tests, we see a pattern emerge.
+
+    doctest: I can greet someone personally
+    >> hello('Harry')
+    => "Hello Harry!"
+    doctest: I can ask if someone is there
+    >> hello('Vic', '?')
+    => "Hello Vic?"
+
+And we will finally want to see the final result:
+
+    === Testing 'hello.doctest'...
+    1.   OK  | load file
+    2.   OK  | I can greet the world
+    3.   OK  | I can greet someone personally
+    4.   OK  | I can ask if someone is there
+    4 comparisons, 4 doctests, 0 failures, 0 errors
+
+
+One thing that you may notice while looking at this document is "Why don't we
+have an expectation with that very first test?"   The answer is, if it ifails
+to load, all tests should fail.  We will notice the problem.  But go ahead and
+run it and see, it is the best way to learn.
