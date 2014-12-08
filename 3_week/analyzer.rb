@@ -1,5 +1,5 @@
 def reads_a_file(file)
-  files_content = File.read(file) 
+  File.read(file) 
 end
 
 
@@ -43,19 +43,25 @@ end
 
 
 # Uses this 'file' variable to capture the desired file when calling 'analyzer.rb'
-file = ARGV[0]
+filename = ARGV[0]
 
 # Uses this 'text' variable to read and hold the desired 
 # file's content, in the form of a singular string
-text = reads_a_file(file)
+text_string = reads_a_file(filename)
 
-puts "The file '#{file}' has the following statistics:"
+def statistics(file, text)
+  <<-EOS
+  The file '#{file}' has the following statistics:
 
-puts "Character count: #{character_count_with_spaces(text)}"
-puts "Character count (excluding spaces): #{character_count_without_spaces(text)}"
-puts "Line count: #{line_count(text)}"
-puts "Word count: #{word_count(text)}"
-puts "Sentence count: #{sentence_count(text)}"
-puts "Paragraph count: #{paragraph_count(text)}"
-puts "Average number of words per sentence: #{average_words_per_sentence(word_count(text), sentence_count(text) )}"
-puts "Average number of sentences per paragraph: #{average_sentences_per_paragraph(sentence_count(text), paragraph_count(text) )}"
+  Character count: #{character_count_with_spaces(text)}
+  Character count (excluding spaces): #{character_count_without_spaces(text)}
+  Line count: #{line_count(text)}
+  Word count: #{word_count(text)}
+  Sentence count: #{sentence_count(text)}
+  Paragraph count: #{paragraph_count(text)}
+  Average number of words per sentence: #{average_words_per_sentence(word_count(text), sentence_count(text) )}
+  Average number of sentences per paragraph: #{average_sentences_per_paragraph(sentence_count(text), paragraph_count(text) )}
+  EOS
+end
+
+puts statistics(filename, text_string)
