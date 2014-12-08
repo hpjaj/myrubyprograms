@@ -1,3 +1,6 @@
-a_string = "Here is a string of words"
-reversed_string = a_string.split(" ").reverse!.join(" ")
-puts reversed_string
+def reverse_word_order(string)
+  string.split(" ").reverse.join(" ")
+end
+
+blah = "Hi there John"
+puts reverse_word_order(blah)
