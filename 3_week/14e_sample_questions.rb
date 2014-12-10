@@ -21,4 +21,4 @@ has_value = value
 5 yes
 6 no
 
-2, 4, 5
+2, 4, and 5
