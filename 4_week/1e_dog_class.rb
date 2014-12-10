@@ -1,5 +1,5 @@
 class Dog
-  
+
   def initialize(name)
     @name = name
   end
@@ -18,4 +18,13 @@ class Dog
 
 end
 
-leo = Dog.new("Leo")
+my_dogs = %w(Fido Lassie Pluto Tramp Lady).map do |name|
+  Dog.new(name)
+end
+
+methods = %w(bark eat chase_cat)
+my_dogs.each do |dog|
+  methods.each do |m|
+    puts dog.send(m)
+  end
+end
