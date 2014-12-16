@@ -19,8 +19,6 @@ def sonnys_conversation_with_grandma
     grandma_says(sonny_says)
     if @what_sonny_says != 'BYE'
       count = 0
-    elsif ( @what_sonny_says == 'BYE' ) && ( count >= 1 )
-      count +=1
     elsif @what_sonny_says == 'BYE' 
       count +=1
     end

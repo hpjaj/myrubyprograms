@@ -1,16 +1,16 @@
 class Rectangle
 
   def initialize(length, width)
-    @width = width
-    @length = length
+    @area = length * width
+    @perimeter = 2 * ( length + width )
   end
 
   def area
-    @length * @width  
+    @area 
   end
 
   def perimeter
-    2 * ( @width + @length )
+    @perimeter
   end
 
 end
